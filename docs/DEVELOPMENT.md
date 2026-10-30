@@ -105,6 +105,7 @@ docker compose run --rm dev help            # all commands
 | `perk-<v>-windows-x86_64-setup.exe` | Per-user installer (no admin), Start-menu shortcut, uninstaller |
 | `perk-<v>-windows-x86_64.zip` | Portable `perk.exe` |
 | `perk_<v>-1_amd64.deb` | Debian/Ubuntu package |
+| `perk-<v>-1.x86_64.rpm` | Fedora/openSUSE package (tested on Fedora 44) |
 | `perk-<v>-linux-x86_64.tar.gz` | Portable Linux binary + `.desktop` + icon |
 
 The Windows build is cross-compiled with MinGW-w64; the finished executables need no

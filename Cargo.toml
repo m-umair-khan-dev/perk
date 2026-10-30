@@ -73,3 +73,25 @@ assets = [
     ["packaging/linux/io.github.m_umair_khan_dev.perk.metainfo.xml", "usr/share/metainfo/", "644"],
     ["README.md", "usr/share/doc/perk/", "644"],
 ]
+
+# RPM package (Fedora, openSUSE, RHEL-likes): `cargo generate-rpm`.
+[package.metadata.generate-rpm]
+summary = "Battery-safe keep-awake tray app"
+url = "https://github.com/m-umair-khan-dev/perk"
+assets = [
+    { source = "target/release/perk", dest = "/usr/bin/perk", mode = "755" },
+    { source = "packaging/linux/perk.desktop", dest = "/usr/share/applications/perk.desktop", mode = "644" },
+    { source = "packaging/linux/perk.svg", dest = "/usr/share/icons/hicolor/scalable/apps/perk.svg", mode = "644" },
+    { source = "packaging/linux/io.github.m_umair_khan_dev.perk.metainfo.xml", dest = "/usr/share/metainfo/io.github.m_umair_khan_dev.perk.metainfo.xml", mode = "644" },
+    { source = "README.md", dest = "/usr/share/doc/perk/README.md", mode = "644", doc = true },
+    { source = "LICENSE", dest = "/usr/share/licenses/perk/LICENSE", mode = "644", doc = true },
+]
+# Shared libraries are detected from the binary. The tray library is loaded at
+# runtime, so it is required by its soname (the package name differs per distro).
+auto-req = "builtin"
+
+[package.metadata.generate-rpm.requires]
+"libayatana-appindicator3.so.1()(64bit)" = "*"
+
+[package.metadata.generate-rpm.recommends]
+upower = "*"

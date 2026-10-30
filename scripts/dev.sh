@@ -21,6 +21,7 @@ package_linux() {
     install -m755 "$CARGO_TARGET_DIR/release/perk" "$stage/perk"
     install -m644 packaging/linux/perk.desktop packaging/linux/perk.svg README.md LICENSE "$stage/"
     tar -C "$(dirname "$stage")" -czf "$DIST/perk-$VERSION-linux-x86_64.tar.gz" "$(basename "$stage")"
+    cargo generate-rpm --target-dir "$CARGO_TARGET_DIR" -o "$DIST/"
 }
 
 package_windows() {
@@ -69,7 +70,7 @@ Perk dev container. Usage: docker compose run --rm dev <command>
   fmt              Format the code
   check            lint + test
   package          Build all packages into ./dist
-  package-linux    .deb + .tar.gz into ./dist
+  package-linux    .deb + .rpm + .tar.gz into ./dist
   package-windows  .zip + NSIS installer into ./dist
   cargo <args>     Run any cargo command
   shell            Interactive shell

@@ -37,6 +37,13 @@ like it normally would. No hot bags, no flat batteries.
 sudo apt install ./perk_*_amd64.deb
 ```
 
+**Linux (Fedora / openSUSE):** install the `.rpm` package:
+
+```sh
+sudo dnf install ./perk-*.x86_64.rpm      # Fedora
+sudo zypper install ./perk-*.x86_64.rpm   # openSUSE
+```
+
 Then look for the cup in your system tray.
 
 ## The cup tells you everything

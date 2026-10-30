@@ -25,8 +25,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN rustup target add x86_64-pc-windows-gnu \
     && rustup component add clippy rustfmt
 
-# cargo-deb builds the Debian package.
+# cargo-deb builds the Debian package, cargo-generate-rpm the RPM package.
 RUN cargo install cargo-deb --locked --version 2.11.1 \
+    && cargo install cargo-generate-rpm --locked --version 0.21.0 \
     && rm -rf /usr/local/cargo/registry
 
 # Build output lives in a Docker volume, never in the (OneDrive-synced) host folder.
