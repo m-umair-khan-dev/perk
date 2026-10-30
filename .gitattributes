@@ -1,0 +1,4 @@
+# Scripts run inside a Linux container; keep LF endings even on Windows checkouts.
+* text=auto eol=lf
+*.ico binary
+*.png binary

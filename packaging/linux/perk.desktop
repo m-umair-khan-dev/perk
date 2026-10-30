@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Perk
+GenericName=Keep Awake
+Comment=Keep your computer awake from the system tray
+Exec=perk
+Icon=perk
+Terminal=false
+Categories=Utility;
+Keywords=caffeine;awake;sleep;inhibit;screensaver;
+StartupNotify=false

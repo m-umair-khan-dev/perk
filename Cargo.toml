@@ -1,0 +1,75 @@
+[package]
+name = "perk"
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.88"
+description = "A lightweight, battery-safe keep-awake utility for Windows and Linux"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/m-umair-khan-dev/perk"
+homepage = "https://github.com/m-umair-khan-dev/perk"
+authors = ["Perk contributors"]
+build = "build.rs"
+
+[[bin]]
+name = "perk"
+path = "src/main.rs"
+
+[dependencies]
+log = { version = "0.4", features = ["std"] }
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+dirs = "6"
+tao = "0.34"
+tray-icon = "0.21"
+global-hotkey = "0.7"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59", features = [
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_Security",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Power",
+    "Win32_System_Registry",
+    "Win32_System_SystemInformation",
+    "Win32_System_Threading",
+    "Win32_UI_Controls",
+    "Win32_UI_HiDpi",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+zbus = { version = "5", default-features = false, features = ["blocking-api", "async-io"] }
+libc = "0.2"
+
+[build-dependencies]
+embed-resource = "3"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[package.metadata.deb]
+maintainer = "Perk contributors"
+copyright = "Perk contributors"
+section = "utils"
+priority = "optional"
+depends = "$auto, libayatana-appindicator3-1"
+recommends = "upower"
+extended-description = """\
+Perk keeps your computer awake from the system tray, for a fixed time or \
+indefinitely. It releases its inhibition the moment the laptop lid closes, \
+so the machine can always suspend normally."""
+assets = [
+    ["target/release/perk", "usr/bin/", "755"],
+    ["packaging/linux/perk.desktop", "usr/share/applications/", "644"],
+    ["packaging/linux/perk.svg", "usr/share/icons/hicolor/scalable/apps/", "644"],
+    ["packaging/linux/io.github.m_umair_khan_dev.perk.metainfo.xml", "usr/share/metainfo/", "644"],
+    ["README.md", "usr/share/doc/perk/", "644"],
+]

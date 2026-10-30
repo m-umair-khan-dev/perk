@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata: what software centres (Ubuntu App Center, GNOME
+     Software, KDE Discover) show for Perk. Installed to /usr/share/metainfo/.
+     Screenshots must be public URLs; they point at assets/screenshots/ on main. -->
+<component type="desktop-application">
+  <id>io.github.m_umair_khan_dev.perk</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Perk</name>
+  <summary>Keep your computer awake, never your laptop in a bag</summary>
+  <developer id="io.github.m_umair_khan_dev">
+    <name>Muhammad Umair Khan</name>
+  </developer>
+
+  <description>
+    <p>
+      Long download? Presentation? Reading a long document? Perk keeps your screen on and
+      stops your computer from dozing off, for as long as you need, with one click from the
+      system tray.
+    </p>
+    <p>
+      When you close the lid, Perk steps aside straight away, so your laptop sleeps like it
+      normally would.
+    </p>
+    <ul>
+      <li>One click: click the cup in the tray to stay awake, click again to stop</li>
+      <li>Stay awake indefinitely, or for 30 minutes, 1 hour, 2 hours or any time you like</li>
+      <li>Optionally start the timer only once you step away; Perk then steps in just before your computer would sleep</li>
+      <li>Closing the lid always lets your laptop sleep</li>
+      <li>Pauses itself when the battery runs low</li>
+      <li>Never changes your power settings</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">perk.desktop</launchable>
+  <provides>
+    <binary>perk</binary>
+  </provides>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The cup in your tray shows whether Perk is keeping your computer awake</caption>
+      <image type="source" width="1600" height="900">https://raw.githubusercontent.com/m-umair-khan-dev/perk/main/assets/screenshots/states.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Pick a time, and optionally start the timer only when you step away</caption>
+      <image type="source" width="1600" height="900">https://raw.githubusercontent.com/m-umair-khan-dev/perk/main/assets/screenshots/menu.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/m-umair-khan-dev/perk</url>
+  <url type="bugtracker">https://github.com/m-umair-khan-dev/perk/issues</url>
+  <url type="vcs-browser">https://github.com/m-umair-khan-dev/perk</url>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <keywords>
+    <keyword>caffeine</keyword>
+    <keyword>awake</keyword>
+    <keyword>sleep</keyword>
+    <keyword>inhibit</keyword>
+  </keywords>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-10-30">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

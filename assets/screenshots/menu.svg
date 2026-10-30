@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E3A4C"/>
+      <stop offset="1" stop-color="#3E6B6A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#wall)"/>
+  <rect width="1600" height="40" fill="#151515"/>
+  <text x="800" y="27" text-anchor="middle" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="17" font-weight="600" fill="#F5F5F5">Thu 30 Oct  14:32</text>
+  <rect x="1503" y="5" width="34" height="30" rx="8" fill="#3A3A3A"/>
+  <g transform="translate(1509 6) scale(0.42)" fill="#F5A02B" stroke="#F5A02B">
+    <rect x="11.36" y="28.64" width="28.48" height="22.08" rx="2.72" fill="none" stroke-width="4.8"/>
+    <path d="M41 30.8 A7.04 7.04 0 1 1 41 45.6" fill="none" stroke-width="5.12"/>
+    <rect x="3.2" y="56.0" width="47.36" height="5.12" rx="2.56" stroke="none"/>
+  </g>
+  <circle cx="1560" cy="20" r="6" fill="none" stroke="#DDDDDD" stroke-width="2"/>
+  <path d="M1585 13 v14 M1580 18 h10" stroke="#DDDDDD" stroke-width="2" stroke-linecap="round"/>
+  <rect x="1152" y="62" width="400" height="335" rx="12" fill="#000000" opacity="0.22"/>
+  <rect x="1150" y="56" width="400" height="335" rx="12" fill="#FFFFFF" stroke="#D5D9DE"/>
+  <text x="1194" y="90" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#7B8794">Waiting for you to step away</text>
+  <text x="1194" y="130" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#7B8794">Then keeps awake for 1 hour</text>
+  <line x1="1162" x2="1538" y1="150.5" y2="150.5" stroke="#E4E7EB"/>
+  <text x="1194" y="183" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#1F2933">Keep awake</text>
+  <path d="M1166 177 l6 6 l12 -13" fill="none" stroke="#1A73E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1156" y="199" width="388" height="36" rx="8" fill="#E8F0FE"/>
+  <text x="1194" y="223" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#1F2933">Keep awake for</text>
+  <path d="M1524 210 l7 7 l-7 7" fill="none" stroke="#52606D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="1162" x2="1538" y1="243.5" y2="243.5" stroke="#E4E7EB"/>
+  <text x="1194" y="276" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#1F2933">Emergency stop</text>
+  <text x="1530" y="276" text-anchor="end" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="16" fill="#7B8794">Ctrl+Alt+Shift+K</text>
+  <line x1="1162" x2="1538" y1="296.5" y2="296.5" stroke="#E4E7EB"/>
+  <text x="1194" y="329" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#1F2933">Settings</text>
+  <path d="M1524 316 l7 7 l-7 7" fill="none" stroke="#52606D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1194" y="369" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#1F2933">Quit Perk</text>
+  <rect x="786" y="195" width="360" height="322" rx="12" fill="#000000" opacity="0.22"/>
+  <rect x="784" y="189" width="360" height="322" rx="12" fill="#FFFFFF" stroke="#D5D9DE"/>
+  <text x="828" y="223" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#1F2933">Indefinitely</text>
+  <text x="828" y="263" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#1F2933">30 minutes</text>
+  <text x="828" y="303" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#1F2933">1 hour</text>
+  <path d="M800 297 l6 6 l12 -13" fill="none" stroke="#1A73E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="828" y="343" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#1F2933">2 hours</text>
+  <line x1="796" x2="1132" y1="363.5" y2="363.5" stroke="#E4E7EB"/>
+  <text x="828" y="396" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#1F2933">Custom (45 minutes)</text>
+  <text x="828" y="436" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#1F2933">Set custom duration…</text>
+  <line x1="796" x2="1132" y1="456.5" y2="456.5" stroke="#E4E7EB"/>
+  <rect x="790" y="465" width="348" height="36" rx="8" fill="#E8F0FE"/>
+  <text x="828" y="489" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="18" fill="#1F2933">Start timer when I step away</text>
+  <path d="M800 483 l6 6 l12 -13" fill="none" stroke="#1A73E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="80" y="700" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="54" font-weight="700" fill="#FFFFFF">Starts when you step away</text>
+  <text x="80" y="760" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="26" fill="#DCE7EA">The timer counts only while you're away, and Perk steps in</text>
+  <text x="80" y="798" font-family="Ubuntu, Cantarell, 'DejaVu Sans', sans-serif" font-size="26" fill="#DCE7EA">one minute before your computer would fall asleep.</text>
+</svg>

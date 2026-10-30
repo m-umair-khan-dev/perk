@@ -1,0 +1,25 @@
+# Zero-pollution dev environment: all toolchains, dependencies and build
+# artifacts live in the image and in named volumes. Only the source tree is
+# bind-mounted, and only finished packages are written back to ./dist.
+#
+#   docker compose build            # build the toolchain image (once)
+#   docker compose run --rm dev test
+#   docker compose run --rm dev package
+#
+services:
+  dev:
+    build:
+      context: docker
+      dockerfile: Dockerfile
+    image: perk-dev:latest
+    working_dir: /work
+    volumes:
+      - .:/work
+      - cargo-registry:/usr/local/cargo/registry
+      - cargo-git:/usr/local/cargo/git
+      - target:/target
+
+volumes:
+  cargo-registry:
+  cargo-git:
+  target:
