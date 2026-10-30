@@ -7,6 +7,7 @@ use std::io::Write;
 use std::os::fd::AsRawFd;
 use std::path::{Path, PathBuf};
 use std::process::{Command, Stdio};
+use std::sync::atomic::{AtomicBool, Ordering};
 use std::thread;
 
 use log::{info, warn};
@@ -161,12 +162,35 @@ pub fn show_error(title: &str, message: &str) -> thread::JoinHandle<()> {
     })
 }
 
+/// Set by [`disable_gtk_gl`] when Perk (not the user) turned GTK's OpenGL off.
+static GL_DISABLED_BY_PERK: AtomicBool = AtomicBool::new(false);
+
+/// Stop GTK from setting up OpenGL in this process: a tray icon and menu never
+/// need it, and it loads the Mesa driver (with software rendering, ~50 MB of
+/// LLVM). Only affects Perk; apps it opens get the setting removed again.
+/// A `GDK_GL` value set by the user is left alone.
+///
+/// Call before any other thread starts.
+pub fn disable_gtk_gl() {
+    if std::env::var_os("GDK_GL").is_none() {
+        // SAFETY: called at start-up, before other threads read the environment.
+        unsafe { std::env::set_var("GDK_GL", "disable") };
+        GL_DISABLED_BY_PERK.store(true, Ordering::Relaxed);
+    }
+}
+
 pub fn open_path(path: &Path) -> Result<(), PlatformError> {
     spawn_detached("xdg-open", path.as_os_str())
 }
 
 fn spawn_detached(program: &str, arg: &OsStr) -> Result<(), PlatformError> {
-    let mut child = Command::new(program)
+    let mut command = Command::new(program);
+    // The opened app (e.g. a text editor) may outlive Perk: give it the
+    // user's normal graphics setup.
+    if GL_DISABLED_BY_PERK.load(Ordering::Relaxed) {
+        command.env_remove("GDK_GL");
+    }
+    let mut child = command
         .arg(arg)
         .stdin(Stdio::null())
         .stdout(Stdio::null())

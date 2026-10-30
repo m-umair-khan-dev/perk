@@ -31,15 +31,9 @@ fn main() {
         return;
     }
 
-    // A tray icon and a menu never need OpenGL, but GTK 3 sets it up at
-    // start-up anyway, which loads the Mesa driver (with software rendering:
-    // ~50 MB of LLVM). Turning it off cuts memory use by about two thirds.
+    // Perk only, before any thread starts: cuts memory use by about two thirds.
     #[cfg(target_os = "linux")]
-    if std::env::var_os("GDK_GL").is_none() {
-        // SAFETY: no other threads exist yet, so nothing reads the
-        // environment concurrently.
-        unsafe { std::env::set_var("GDK_GL", "disable") };
-    }
+    platform::disable_gtk_gl();
 
     // Check for a running instance before touching the log file it owns.
     let _instance = match SingleInstance::acquire() {
